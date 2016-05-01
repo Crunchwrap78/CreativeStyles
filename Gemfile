@@ -14,7 +14,9 @@ gem "carrierwave"
 
 gem "font-awesome-rails"
 
-gem 'yt', '~> 0.25.5'
+gem 'yt', '~> 0.13.7'
+
+gem 'sunspot_rails', '~> 1.3.0'
 
 gem 'omniauth'
 

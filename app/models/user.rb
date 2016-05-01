@@ -1,6 +1,6 @@
 
 class User < ActiveRecord::Base
-  has_many :vids, dependent: :destroy
+  has_many :videos, dependent: :destroy
   has_many :playlists, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :posts, dependent: :destroy
