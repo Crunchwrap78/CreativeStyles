@@ -16,6 +16,8 @@ gem "font-awesome-rails"
 
 gem 'yt', '~> 0.13.7'
 
+gem 'bcrypt', '~> 3.1.7'
+
 gem 'sunspot_rails'
 
 gem 'omniauth'
