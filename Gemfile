@@ -16,9 +16,11 @@ gem "font-awesome-rails"
 
 gem 'yt', '~> 0.13.7'
 
-gem 'sunspot_rails', '~> 1.3.0'
+gem 'sunspot_rails'
 
 gem 'omniauth'
+
+gem 'rails-observers'
 
 gem 'omniauth-facebook'
 

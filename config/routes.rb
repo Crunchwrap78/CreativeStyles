@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  root 'static#home'
+  match '/about', to: 'static#about', via: 'get'
 
   resources :sessions, only:[:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
