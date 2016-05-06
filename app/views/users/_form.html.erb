@@ -1,0 +1,48 @@
+<div class="container">
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h4><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><p><%= message %></p></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <div class="sign-in row">
+    <div class="col s9 m7 l8 ">
+    <h4>Sign Up </h4>
+      <div class="field">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="field ">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <!-- inserted here -->
+      <div class="field">
+          <%= f.label :password, class: "col-sm-2 control-label" %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: "col-sm-2 control-label" %>
+
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+     <div class="actions">
+            <%= button_tag(type: "submit", class: "btn waves-effect waves-light") do %>
+                  <i class="mdi-social-person-add"> Sign Up</i>
+                  <% end %>
+      </div>
+    <% end %>
+</div>

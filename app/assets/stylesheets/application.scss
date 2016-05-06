@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ @import 'materialize';
+ @import 'static.scss';
+ @import 'events.scss';
+ @import 'playlists.scss';
+ @import 'users.scss';
+ @import 'videos.scss';
+
+
+ body {
+   background-color: #f6f6f6;
+   height: 100%;
+
+ }
+
+ header {
+   padding: 0;
+ }

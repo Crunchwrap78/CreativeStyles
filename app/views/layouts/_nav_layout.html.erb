@@ -1,0 +1,14 @@
+<% if signed_in? %>
+  <li><%= link_to 'New Video', new_user_video_path(@current_user) %></li>
+  <li><%= link_to 'Playlist Search', new_user_playlist_path(@current_user) %> </li>
+  <li><%= link_to 'My Events', user_events_path(@current_user) %> </li>
+  <li><%= link_to 'My Profile', user_path(@current_user) %></li>
+  <li><%= link_to 'My Videos', user_videos_path(@current_user) %></li>
+  <li><%= link_to 'My Playlists', user_playlists_path(@current_user) %></li>
+  <li><%= link_to 'Sign out', signout_path, method: 'delete' %></li>
+
+<% else %>
+  <li><%= link_to 'Sign up', signup_path %></li>
+  <li><%= link_to 'Sign in', signin_path %></li>
+  <li><%= link_to 'Home', root_path %></li>
+<% end %>

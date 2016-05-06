@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= render 'layouts/nav' unless @disable_nav %>
+  </header>
 
 <%= yield %>
 

@@ -1,0 +1,19 @@
+<br><br><br>
+    <div class="container">
+        <div class="">
+          <div class="card playlist-text lighten-4">
+            <div class="card-content black-text">
+              <span class="card-title black-text"><h4>My Playlists</h4></span>
+              <% @playlists.each do |playlist| %>
+  <li><%= link_to playlist.name, user_playlist_path(@user,playlist), class: "collection-item" %><span class="badge">
+  <i class="mdi-action-delete"><%= link_to "Delete", user_playlist_path(@user,playlist) , method: :delete, data: { confirm: 'Are you certain?' } %></i></li>
+  </span>
+  </ul>
+  <% end %>
+            </div>
+            <div class="card-action">
+
+            </div>
+          </div>
+        </div>
+      </div>

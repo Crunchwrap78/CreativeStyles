@@ -1,5 +1,3 @@
 class Video < ActiveRecord::Base
-  searchable do
-    string :title  
-  end
+  belongs_to :user
 end

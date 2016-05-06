@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h1>New video</h1>
+
+  <%= form_for [@user, @video] do |f| %>
+    <div class="form-group">
+      <%= f.label :link %>
+      <%= f.text_field :link, class: 'form-control', required: true %>
+      <span class="help-block">A link to the video on YouTube.</span>
+    </div>
+
+    <%= f.submit class: 'btn waves-effect waves-light' %>
+  <% end %>
+</div>

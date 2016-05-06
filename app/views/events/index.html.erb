@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<% if current_user%>
+<h1>Event Schedule</h1>
+
+<div id="events_calendar">
+  <%= render :partial => "calendar", locals: {events: @events} %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.start_time.strftime("%Y-%m-%d %l:%M %p") %></td>
+        <td><%= link_to 'Show', event, class: "btn waves-effect waves-light" %></td>
+        <td><%= link_to 'Edit', edit_user_event_path(event), class: "btn waves-effect waves-light" %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn waves-effect waves-light" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_user_event_path, class: "btn waves-effect waves-light" %>
+<%end%>

@@ -3,13 +3,18 @@ Rails.application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
 
   resources :sessions, only:[:new, :create, :destroy]
+  resources :users, except: [:index]  do
+    resources :videos, only: [:index, :new, :create]
+    resources :playlists, except: [:edit]
+    resources :events
+  end
 
 
 
 
 
 
-
+  post 'playlists/new', to: 'playlists#create'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
