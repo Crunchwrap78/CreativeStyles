@@ -16,11 +16,11 @@
       <div class="row">
         <% group.each do |video| %>
           <% if video %>
-            <div class="col s12 m4">
+            <div class="col s12 m6">
               <div class="yt_video thumbnail">
-                <%= link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
-                                      class: 'img-rounded'),
-                            "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank' %>
+                <iframe id="player" type="text/html" width="300" height="200"
+                    src="https://www.youtube.com/embed/<%= video.uid %>"
+                    frameborder="0" allowfullscreen></iframe>
                 <div class="caption">
                   <h5><%= video.title %></h5>
                   <% if video.published_at %>
