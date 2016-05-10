@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only:[:new, :create, :destroy]
   resources :users, except: [:index]  do
-    resources :videos, only: [:index, :new, :create]
+    resources :videos, only: [:index, :new, :create, :destroy]
     resources :playlists, except: [:edit]
     resources :events
   end
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
 
   post 'playlists/new', to: 'playlists#create'
-  
+
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

@@ -14,11 +14,18 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     if @video.save
       flash[:success] = 'Video added!'
-      redirect_to root_url
+      redirect_to user_videos_path
     else
       render :new
     end
   end
+
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+    redirect_to user_videos_path, notice: 'Video deleted'
+  end
+
 
   private
 
